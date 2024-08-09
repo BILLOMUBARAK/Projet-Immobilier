@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste du Personnel</title>
+    <style>
+        body {
+
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .btn-container {
+            margin-top: 20px;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .filter-container {
+            margin-bottom: 20px;
+        }
+        .filter-container form {
+            display: flex;
+            align-items: center;
+        }
+        .filter-container label {
+            margin-right: 10px;
+        }
+        .filter-container select {
+            margin-right: 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Liste du Personnel</h1>
+
+    <div class="filter-container">
+        <form method="POST" action="/afficher_personnel">
+            <label for="id_immeuble">Filtrer par immeuble :</label>
+            <select id="id_immeuble" name="id_immeuble">
+                <option value="">Tous les immeubles</option>
+                {% for immeuble in immeubles %}
+                <option value="{{ immeuble.id_immeuble }}">{{ immeuble.nom }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" class="btn">Filtrer</button>
+        </form>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID Personnel</th>
+                <th>ID Immeuble</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for personne in personnels %}
+            <tr>
+                <td>{{ personne.id_personnel }}</td>
+                <td>{{ personne.id_immeuble }}</td>
+                <td>{{ personne.nom }}</td>
+                <td>{{ personne.prenom }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="btn-container">
+        <a href="/retour" class="btn">Retour à l'accueil</a>
+    </div>
+</body>
+</html>

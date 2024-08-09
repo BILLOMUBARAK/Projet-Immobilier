@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un Immeuble</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            color: #333;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ajouter un Immeuble</h1>
+        <form action="/ajouter_immeuble" method="post">
+
+            <label for="nom">Nom de l'immeuble:</label>
+            <input type="text" id="nom" name="nom" required>
+
+            <label for="nomProprio">Nom du propriétaire:</label>
+            <input type="text" id="nomProprio" name="nomProprio" required>
+
+            <label for="nbrEtage">Nombre d'étages:</label>
+            <input type="number" id="nbrEtage" name="nbrEtage" required>
+
+            <label for="nbrAppart">Nombre d'appartements:</label>
+            <input type="number" id="nbrAppart" name="nbrAppart" required>
+
+            <label for="adresse">Adresse:</label>
+            <input type="text" id="adresse" name="adresse" required>
+
+            <button type="submit">Ajouter</button>
+        </form>
+    </div>
+</body>
+</html>

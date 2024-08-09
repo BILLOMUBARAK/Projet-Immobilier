@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Paiements de Loyer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .bg-green {
+            background-color: #4CAF50; /* Vert pour "oui" */
+            color: white;
+        }
+        .bg-red {
+            background-color: #f44336; /* Rouge pour "non" */
+            color: white;
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .filter-container {
+            margin-bottom: 20px;
+        }
+        .filter-container form {
+            display: flex;
+            align-items: center;
+        }
+        .filter-container label {
+            margin-right: 10px;
+        }
+        .filter-container select, .filter-container input[type="date"] {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Liste des Paiements de Loyer</h1>
+
+    <!-- Formulaire de filtrage -->
+    <div class="filter-container">
+        <form action="/afficher_paiements" method="POST">
+            <label for="id_immeuble">Filtrer par immeuble :</label>
+            <select id="id_immeuble" name="id_immeuble">
+                <option value="">Tous les immeubles</option>
+                {% for immeuble in immeubles %}
+                    <option value="{{ immeuble.id_immeuble }}">{{ immeuble.nom }}</option>
+                {% endfor %}
+            </select>
+            <label for="client">Client :</label>
+            <select name="client" id="client">
+                <option value="">Tous les clients</option>
+                {% for client in clients %}
+                    <option value="{{ client.id }}">{{ client.nom }} {{ client.prenom }}</option>
+                {% endfor %}
+            </select>
+            <label for="date">Date :</label>
+            <input type="date" id="date" name="date">
+
+            <button type="submit" class="btn">Filtrer</button>
+        </form>
+    </div>
+
+    <!-- Tableau des paiements -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID Immeuble</th>
+                <th>ID Appartement</th>
+                <th>ID Client</th>
+                <th>Montant</th>
+                <th>Date</th>
+                <th>Payer</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for paiement in paiements %}
+                <tr>
+                    <td>{{ paiement.id_immeuble }}</td>
+                    <td>{{ paiement.id_appart }}</td>
+                    <td>{{ paiement.id_client }}</td>
+                    <td>{{ paiement.Montant }}</td>
+                    <td>{{ paiement.date }}</td>
+                    <td class="{% if paiement.payer.lower() == 'oui' %}bg-green{% else %}bg-red{% endif %}">{{ paiement.payer }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div>
+        <a href="/ajouter_paiement" class="btn">Ajouter un Paiement</a>
+        <a href="/retour" class="btn">Retour à l'accueil</a>
+    </div>
+</body>
+</html>

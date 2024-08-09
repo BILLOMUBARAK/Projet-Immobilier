@@ -1,0 +1,61 @@
+<!-- supprimerPaiement.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Supprimer un Paiement de Loyer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            width: 50%;
+            margin: auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn {
+            background-color: #f44336; /* Rouge */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #d32f2f; /* Rouge plus foncé au survol */
+        }
+    </style>
+</head>
+<body>
+    <h1>Supprimer un Paiement de Loyer</h1>
+    <form action="/supprimer_paiement" method="POST">
+        <div class="form-group">
+            <label for="id_paiement">ID Paiement:</label>
+            <input type="text" id="id_paiement" name="id_paiement" required>
+        </div>
+        <button type="submit" class="btn">Supprimer Paiement</button>
+    </form>
+
+    <div>
+        <a href="/retour" class="btn">Retour à l'accueil</a>
+    </div>
+</body>
+</html>

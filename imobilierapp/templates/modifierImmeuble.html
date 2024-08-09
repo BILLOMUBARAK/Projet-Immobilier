@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier Immeuble</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9; }
+        .form-group { margin-bottom: 20px; }
+        .btn { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+        .btn-primary { background-color: #4CAF50; color: white; border: none; }
+        .btn-primary:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Modifier Immeuble</h2>
+        <form action="/modifier_immeuble" method="POST">
+            <div class="form-group">
+                <label for="id_immeuble">ID de l'Immeuble:</label>
+                <input type="number" id="id_immeuble" name="id_immeuble" required>
+            </div>
+            <div class="form-group">
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="form-group">
+                <label for="nomProprio">Nom du Propriétaire:</label>
+                <input type="text" id="nomProprio" name="nomProprio" required>
+            </div>
+            <div class="form-group">
+                <label for="nbrEtage">Nombre d'Étages:</label>
+                <input type="number" id="nbrEtage" name="nbrEtage" required>
+            </div>
+            <div class="form-group">
+                <label for="nbrAppart">Nombre d'Appartements:</label>
+                <input type="number" id="nbrAppart" name="nbrAppart" required>
+            </div>
+            <div class="form-group">
+                <label for="adresse">Adresse:</label>
+                <input type="text" id="adresse" name="adresse" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+                <a href="/retour" class="btn">Retour à l'accueil</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

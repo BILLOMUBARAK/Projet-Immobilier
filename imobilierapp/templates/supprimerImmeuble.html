@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Supprimer un Immeuble</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+        }
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Supprimer un Immeuble</h2>
+        <form action="/supprimer_immeuble" method="POST">
+            <div class="form-group">
+                <label for="id_immeuble">ID de l'Immeuble:</label>
+                <input type="number" id="id_immeuble" name="id_immeuble" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-danger">Confirmer la Suppression</button>
+                 <a href="/retour" class="btn">Retour à l'accueil</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

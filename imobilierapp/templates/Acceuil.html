@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Page d'Accueil</title>
+    <style>
+        body {
+            background-image: url('img.png');
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            position: relative;
+            background-color: rgba(255, 255, 255, 0); /* Fond complètement transparent */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            max-width: 1000px;
+            text-align: center;
+            width: 90%;
+            animation: fadeIn 1s ease-out;
+        }
+        h1 {
+            color: #333;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Espace entre les colonnes */
+            margin-top: 20px; /* Espacement entre le titre et les boutons */
+        }
+        .column-left,
+        .column-right {
+            flex: 1; /* Chaque colonne prend la moitié de l'espace disponible */
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px 0; /* Ajustement de la taille des boutons */
+            margin-bottom: 8px; /* Espace entre les boutons */
+            border: none;
+            border-radius: 4px; /* Forme rectangulaire */
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center; /* Centrage du texte */
+            line-height: 1; /* Centrage vertical */
+            box-sizing: border-box; /* Inclure les bordures dans la taille */
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Page d'Accueil</h1>
+        <div class="btn-container">
+            <div class="column-left">
+                <a href="/ajouter_immeuble" class="btn">Ajouter un immeuble</a>
+                <a href="/ajouter_appartement" class="btn">Ajouter un Appartement</a>
+                <a href="/Ajouter_Client" class="btn">Ajouter un client</a>
+                <a href="/ajouter_personnel" class="btn">Ajouter personnel</a>
+                <a href="/ajouter_paiement" class="btn">Ajouter paiement</a>
+                <a href="/AfficherImmeuble" class="btn">Afficher Immeuble</a>
+                <a href="/AfficherAppartement" class="btn">Afficher Appartement</a>
+                <a href="/AfficherClient" class="btn">Afficher Clients</a>
+                <a href="/afficher_personnel" class="btn">Afficher personnel</a>
+                <a href="/afficher_paiements" class="btn">Afficher Paiements</a>
+            </div>
+            <div class="column-right">
+                <a href="/supprimer_immeuble" class="btn">Supprimer Immeuble</a>
+                <a href="/supprimer_appartement" class="btn">Supprimer Appartement</a>
+                <a href="/supprimer_client" class="btn">Supprimer Client</a>
+                <a href="/supprimer_personnel" class="btn">Supprimer personnel</a>
+                <a href="/supprimer_paiement" class="btn">Supprimer paiement</a>
+                <a href="/modifier_immeuble" class="btn">Modifier Immeuble</a>
+                <a href="/modifier_appartement" class="btn">Modifier Appartement</a>
+                <a href="/modifier_client" class="btn">Modifier Client</a>
+                <a href="/modifier_personnel" class="btn">Modifier personnel</a>
+                <a href="/modifier_paiement" class="btn">Modifier paiement</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
